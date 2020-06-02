@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const page = document.getElementById('page');
     const overlay = document.querySelector('.overlay');
     const modal = document.querySelector('.modal');
     const modalContent = document.querySelector('.modal__content');
@@ -30,15 +31,28 @@ document.addEventListener('DOMContentLoaded', () => {
         if(!overlay.classList.contains('open') && !modal.classList.contains('open')) {
             overlay.classList.add('open');
             modal.classList.add('open');
+            toggleLock();
         }
     }
     function hideModal() {
         overlay.classList.remove('open');
         modal.classList.remove('open');
+        toggleLock();
     }
 
     function getContent(content) {
         const data = document.getElementById(content);
         modalContent.innerHTML = data.innerHTML;
+    }
+
+    function toggleLock() {
+        if(page.classList.contains('lock')) {
+            page.classList.remove('lock');
+        } else {
+            const paddingRight = window.innerWidth - document.documentElement.clientWidth;
+            console.log(paddingRight);
+            page.classList.add('lock');
+            page.style.paddingRight = `${paddingRight}px`;
+        }
     }
 });

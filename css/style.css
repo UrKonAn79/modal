@@ -94,6 +94,10 @@ button {
     display: none;
 }
 
+.lock {
+    overflow: hidden;
+}
+
 .overlay {
     position: fixed;
     z-index: 99;
