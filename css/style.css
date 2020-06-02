@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    outline: none;
 }
 a {
     text-decoration: none;
@@ -10,7 +11,12 @@ a {
 ul {
     list-style: none;
 }
+button {
+    border: none;
+    cursor: pointer;
+}
 #page {
+    position: relative;
     width: 100%;
     height: 100%;
     font-family: sans-serif;
@@ -86,4 +92,105 @@ ul {
 
 .hidden {
     display: none;
+}
+
+.overlay {
+    position: fixed;
+    z-index: 99;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #212121;
+    opacity: 0;
+    visibility: hidden;
+    transition: all ease .4s;
+}
+.overlay.open {
+    opacity: .85;
+    visibility: visible;
+}
+
+.modal {
+    position: fixed;
+    z-index: 100;
+    max-width: 60%;
+    max-height: 70%;
+    left: 50%;
+    top: -100%;
+    padding: 30px;
+    transform: translate(-50%, -50%);
+    background-color: whitesmoke;
+    overflow-x: hidden;
+    overflow-y: auto;
+    transition: all ease .4s;
+}
+.modal.open {
+    top: 50%;
+}
+.modal__close {
+    position: fixed;
+    width: 32px;
+    height: 32px;
+    top: 15px;
+    right: 15px;
+    border-radius: 50%;
+    background-color: darkslateblue;
+    cursor: pointer;
+}
+.modal__close span {
+    display: block;
+    position: absolute;
+    height: 4px;
+    width: 26px;
+    left: 3px;
+    top: 14px;
+    background-color: whitesmoke;
+}
+.modal__close span:nth-child(1) {
+    transform: rotate(45deg);
+}
+.modal__close span:nth-child(2) {
+    transform: rotate(-45deg);
+}
+.modal__title {
+    width: fit-content;
+    font-size: 1.3em;
+    font-weight: bold;
+}
+.modal__buttons {
+    display: flex;
+    justify-content: flex-end;
+}
+.modal__link {
+    display: block;
+    padding: 5px 15px;
+    margin: 0 15px;
+    background-color: darkslateblue;
+    color: whitesmoke;
+}
+.form {
+    width: max-content;
+    margin: 15px 0;
+}
+.form__group {
+    margin: 15px;
+}
+.form__group label,
+.form__group input {
+    display: block;
+}
+.form__group input {
+    padding: 5px 10px;
+    border: 1px solid darkslateblue;
+    font-size: inherit;
+    line-height: 22px;
+}
+.form__group button {
+    display: block;
+    margin: 0 auto;
+    padding: 5px 15px;
+    background-color: darkslateblue;
+    font-size: inherit;
+    color: whitesmoke;
 }

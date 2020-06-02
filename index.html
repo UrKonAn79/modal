@@ -14,13 +14,13 @@
 		  <nav class="menu">
 				<ul class="menu__list">
 					 <li class="menu__item">
-						  <a href="#" class="menu__link triger" data-content="information">Info</a>
+						  <a href="#" class="menu__link trigger" data-content="information">Info</a>
 					 </li>
 					 <li class="menu__item">
-						  <a href="#" class="menu__link triger" data-content="login">Sign In</a>
+						  <a href="#" class="menu__link trigger" data-content="login">Sign In</a>
 					 </li>
 					 <li class="menu__item">
-						  <a href="#" class="menu__link triger" data-content="registration">Sign Up</a>
+						  <a href="#" class="menu__link trigger" data-content="registration">Sign Up</a>
 					 </li>
 				</ul>
 		  </nav>
@@ -126,8 +126,13 @@
 		  earum eligendi error fugit perferendis perspiciatis placeat provident quibusdam reiciendis rem repudiandae sint
 		  veniam vitae! Ab eum placeat praesentium unde veritatis vero voluptatem. Ab, ducimus, id.
 	 </p>
+	 <div class="modal__buttons">
+		  <a href="#" class="modal__link trigger" data-content="login">Sign In</a>
+		  <a href="#" class="modal__link trigger" data-content="registration">Sign Up</a>
+	 </div>
 </div>
-<div class="" id="login">
+
+<div class="hidden" id="login">
 	 <div class="modal__title">Modal login</div>
 	 <form action="#" class="modal__form form">
 		  <div class="form__group">
@@ -143,8 +148,9 @@
 		  </div>
 	 </form>
 </div>
-<div class="" id="registration">
-	 <div class="modal__title">Modal title</div>
+
+<div class="hidden" id="registration">
+	 <div class="modal__title">Modal registration</div>
 	 <form action="#" class="modal__form form">
 		  <div class="form__group">
 				<label for="email-reg">E-mail:</label>
