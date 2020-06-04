@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const page = document.getElementById('page');
+    const header = document.querySelector('.header');
     const overlay = document.querySelector('.overlay');
     const modal = document.querySelector('.modal');
     const modalContent = document.querySelector('.modal__content');
@@ -48,11 +49,14 @@ document.addEventListener('DOMContentLoaded', () => {
     function toggleLock() {
         if(page.classList.contains('lock')) {
             page.classList.remove('lock');
+            page.style.paddingRight = '';
+            header.style.paddingRight = '';
         } else {
             const paddingRight = window.innerWidth - document.documentElement.clientWidth;
             console.log(paddingRight);
             page.classList.add('lock');
             page.style.paddingRight = `${paddingRight}px`;
+            header.style.paddingRight = `${paddingRight}px`;
         }
     }
 });
